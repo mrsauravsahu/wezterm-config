@@ -21,8 +21,10 @@ return {
    -- color scheme
    colors = colors,
 
+   font_size = 18,
+
    -- background: pass in `true` if you want wezterm to start with focus mode on (no bg images)
-   background = backdrops:initial_options(false),
+   -- background = backdrops:initial_options(false),
 
    -- scrollbar
    enable_scroll_bar = true,
@@ -53,7 +55,6 @@ return {
    window_frame = {
       active_titlebar_bg = '#090909',
       -- font = fonts.font,
-      -- font_size = fonts.font_size,
    },
    -- inactive_pane_hsb = {
    --    saturation = 0.9,
