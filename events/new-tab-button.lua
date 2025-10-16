@@ -92,36 +92,37 @@ end
 local choices, choices_data = build_choices()
 
 M.setup = function()
-   wezterm.on('new-tab-button-click', function(window, pane, button, default_action)
-      if default_action and button == 'Left' then
-         window:perform_action(default_action, pane)
-      end
-
-      if default_action and button == 'Right' then
-         window:perform_action(
-            act.InputSelector({
-               title = 'InputSelector: Launch Menu',
-               choices = choices,
-               fuzzy = true,
-               fuzzy_description = nf.md_rocket .. ' Select a lauch item: ',
-               action = wezterm.action_callback(function(_window, _pane, id, label)
-                  if not id and not label then
-                     return
-                  else
-                     wezterm.log_info('you selected ', id, label)
-                     wezterm.log_info(choices_data[tonumber(id)])
-                     window:perform_action(
-                        act.SpawnCommandInNewTab(choices_data[tonumber(id)]),
-                        pane
-                     )
-                  end
-               end),
-            }),
-            pane
-         )
-      end
-      return false
-   end)
-end
-
+  end
+--    wezterm.on('new-tab-button-click', function(window, pane, button, default_action)
+--       if default_action and button == 'Left' then
+--          window:perform_action(default_action, pane)
+--       end
+--
+--       if default_action and button == 'Right' then
+--          window:perform_action(
+--             act.InputSelector({
+--                title = 'InputSelector: Launch Menu',
+--                choices = choices,
+--                fuzzy = true,
+--                fuzzy_description = nf.md_rocket .. ' Select a lauch item: ',
+--                action = wezterm.action_callback(function(_window, _pane, id, label)
+--                   if not id and not label then
+--                      return
+--                   else
+--                      wezterm.log_info('you selected ', id, label)
+--                      wezterm.log_info(choices_data[tonumber(id)])
+--                      window:perform_action(
+--                         act.SpawnCommandInNewTab(choices_data[tonumber(id)]),
+--                         pane
+--                      )
+--                   end
+--                end),
+--             }),
+--             pane
+--          )
+--       end
+--       return false
+--    end)
+-- end
+--
 return M

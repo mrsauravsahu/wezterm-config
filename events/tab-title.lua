@@ -125,11 +125,7 @@ end
 local function create_title(process_name, base_title, max_width, inset)
    local title
 
-   if process_name:len() > 0 then
-      title = process_name .. ' ~ ' .. base_title
-   else
-      title = base_title
-   end
+   title = "sahu" .. ' ~ ' .. base_title
 
    if base_title == 'Debug' then
       title = GLYPH_DEBUG .. ' DEBUG'

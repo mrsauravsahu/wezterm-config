@@ -21,8 +21,7 @@ return {
    -- color scheme
    colors = colors,
 
-   font_size = 18,
-
+   font_size = 16,
    -- background: pass in `true` if you want wezterm to start with focus mode on (no bg images)
    -- background = backdrops:initial_options(false),
 

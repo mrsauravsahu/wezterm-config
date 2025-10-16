@@ -100,18 +100,18 @@ M.setup = function(opts)
    end
 
    wezterm.on('update-right-status', function(window, _pane)
-      local battery_text, battery_icon = battery_info()
+      -- local battery_text, battery_icon = battery_info()
 
-      cells
-         :update_segment_text('date_text', wezterm.strftime(valid_opts.date_format))
-         :update_segment_text('battery_icon', battery_icon)
-         :update_segment_text('battery_text', battery_text)
+      -- cells
+         -- :update_segment_text('date_text', wezterm.strftime(valid_opts.date_format))
+         -- :update_segment_text('battery_icon', battery_icon)
+         -- :update_segment_text('battery_text', battery_text)
 
-      window:set_right_status(
-         wezterm.format(
-            cells:render({ 'date_icon', 'date_text', 'separator', 'battery_icon', 'battery_text' })
-         )
-      )
+      -- window:set_right_status(
+      --    wezterm.format(
+      --       cells:render({ 'battery_icon', 'battery_text' })
+      --    )
+      -- )
    end)
 end
 
