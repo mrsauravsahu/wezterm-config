@@ -164,17 +164,17 @@ local keys = {
 
    -- panes --
    -- panes: split panes
-   {
-      key = [[\]],
-      mods = mod.SUPER,
-      action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
-   },
-   {
-      key = [[\]],
-      mods = mod.SUPER_REV,
-      action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
-   },
-
+   -- {
+   --    key = [[\]],
+   --    mods = mod.SUPER,
+   --    action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
+   -- },
+   -- {
+   --    key = [[\]],
+   --    mods = mod.SUPER_REV,
+   --    action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
+   -- },
+   --
    -- panes: zoom+close pane
    { key = 'Enter', mods = mod.SUPER,     action = act.TogglePaneZoomState },
    { key = 'w',     mods = mod.SUPER,     action = act.CloseCurrentPane({ confirm = false }) },
