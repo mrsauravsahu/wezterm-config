@@ -125,27 +125,23 @@ end
 local function create_title(process_name, base_title, max_width, inset)
    local title
 
-   title = ""
-   return title
-   -- title = "sahu" .. ' ~ ' .. base_title
-
-   -- if base_title == 'Debug' then
-   --    title = GLYPH_DEBUG .. ' DEBUG'
-   --    inset = inset - 2
-   -- end
-   --
-   -- if base_title:match('^InputSelector:') ~= nil then
-   --    title = base_title:gsub('InputSelector:', GLYPH_SEARCH)
-   --    inset = inset - 2
-   -- end
-   --
-   -- if title:len() > max_width - inset then
-   --    local diff = title:len() - max_width + inset
-   --    title = title:sub(1, title:len() - diff)
-   -- else
-   --    local padding = max_width - title:len() - inset
-   --    title = title .. string.rep(' ', padding)
-   -- end
+   if base_title == 'Debug' then
+      title = GLYPH_DEBUG .. ' DEBUG'
+      inset = inset - 2
+   end
+   
+   if base_title:match('^InputSelector:') ~= nil then
+      title = base_title:gsub('InputSelector:', GLYPH_SEARCH)
+      inset = inset - 2
+   end
+   
+   if title:len() > max_width - inset then
+      local diff = title:len() - max_width + inset
+      title = title:sub(1, title:len() - diff)
+   else
+      local padding = max_width - title:len() - inset
+      title = title .. string.rep(' ', padding)
+   end
 end
 
 ---@param panes any[] WezTerm https://wezfurlong.org/wezterm/config/lua/pane/index.html
