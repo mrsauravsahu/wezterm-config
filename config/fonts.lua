@@ -1,7 +1,7 @@
 local wezterm = require('wezterm')
 local platform = require('utils.platform')
 
-local font_size = platform.is_mac and 12 or 16
+local font_size = platform.is_mac and 14 or 16
 
 return {
   font_size = font_size,
