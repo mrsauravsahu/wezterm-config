@@ -1,7 +1,7 @@
 local wezterm = require('wezterm')
 local platform = require('utils.platform')
 
-local font_size = platform.is_mac and 18 or 14
+local font_size = (true or platform.is_mac) and 14 or 14
 
 return {
   font_size = font_size,
@@ -13,6 +13,9 @@ return {
     --   family = 'Terminus',
     --   weight = 'Bold'
     -- },
+    {
+      family = "Geist Mono",
+    },
     {
       family = "UbuntuMono Nerd Font Mono",
     },
