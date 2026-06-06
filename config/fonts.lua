@@ -14,7 +14,7 @@ return {
     --   weight = 'Bold'
     -- },
     {
-      family = "Geist Mono",
+      family = "GeistMono Nerd Font Mono",
     },
     {
       family = "UbuntuMono Nerd Font Mono",
