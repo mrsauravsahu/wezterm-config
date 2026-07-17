@@ -125,6 +125,12 @@ end
 local function create_title(process_name, base_title, max_width, inset)
    local title
 
+   if process_name:len() > 0 then
+      title = process_name .. ' ~ ' .. base_title
+   else
+      title = base_title
+   end
+
    if base_title == 'Debug' then
       title = GLYPH_DEBUG .. ' DEBUG'
       inset = inset - 2
@@ -135,13 +141,15 @@ local function create_title(process_name, base_title, max_width, inset)
       inset = inset - 2
    end
    
-   if title:len() > max_width - inset then
-      local diff = title:len() - max_width + inset
-      title = title:sub(1, title:len() - diff)
+   if wezterm.column_width(title) > max_width - inset then
+      local diff = wezterm.column_width(title) - max_width + inset
+      title = wezterm.truncate_right(title, math.max(0, wezterm.column_width(title) - diff))
    else
-      local padding = max_width - title:len() - inset
+      local padding = math.max(0, max_width - wezterm.column_width(title) - inset)
       title = title .. string.rep(' ', padding)
    end
+
+   return title
 end
 
 ---@param panes any[] WezTerm https://wezfurlong.org/wezterm/config/lua/pane/index.html
