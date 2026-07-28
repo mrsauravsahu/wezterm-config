@@ -22,6 +22,10 @@ return {
     --   family = 'Terminus',
     --   weight = 'Bold'
     -- },
+    -- SF Mono is Apple-proprietary and not shipped by the Nerd Fonts project.
+    -- Installed via `brew install --cask font-sf-mono-nerd-font-ligaturized`
+    -- (family name 'Liga SFMono Nerd Font').
+    { family = 'Liga SFMono Nerd Font', weight = 'Medium' },
     primary_font,
     {
       family = "UbuntuMono Nerd Font Mono",
