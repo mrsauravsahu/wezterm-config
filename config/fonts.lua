@@ -8,39 +8,21 @@ local font_size = 18
 
 -- Primary font. Keep macOS on the 'Mono' variant (unchanged); on Linux use the
 -- installed 'GeistMono Nerd Font' family (~/.local/share/fonts/GeistMonoNerdFont-Regular.otf).
-local primary_font = platform.is_mac
-   and { family = 'GeistMono Nerd Font Mono', weight = 'Medium' }
+local geist_font = platform.is_mac
+   and { family = 'GeistMono Nerd Font Mono' }
    or { family = 'GeistMono Nerd Font' }
 
 return {
   font_size = font_size,
   font = wezterm.font_with_fallback {
-    -- {
-    --   family = "Spot Mono",
-    -- },
-    -- {
-    --   family = 'Terminus',
-    --   weight = 'Bold'
-    -- },
     -- SF Mono is Apple-proprietary and not shipped by the Nerd Fonts project.
     -- Installed via `brew install --cask font-sf-mono-nerd-font-ligaturized`
     -- (family name 'Liga SFMono Nerd Font').
+    "MesloLGM Nerd Font Mono",
+    "UbuntuMono Nerd Font Mono",
+    "JetBrains Mono",
     { family = 'Liga SFMono Nerd Font', weight = 'Medium' },
-    primary_font,
-    {
-      family = "UbuntuMono Nerd Font Mono",
-    },
-    {
-      family = "MesloLGM Nerd Font Mono",
-    },
-    {
-      family = 'JetBrains Mono',
-      weight = 'Medium',
-    },
-    {
-      family = "Iosevka Nerd Font Mono",
-    },
-    'Noto Color Emoji',
+    geist_font,
   },
   warn_about_missing_glyphs = false,
   --ref: https://wezfurlong.org/wezterm/config/lua/config/freetype_pcf_long_family_names.html#why-doesnt-wezterm-use-the-distro-freetype-or-match-its-configuration
