@@ -4,7 +4,7 @@ local platform = require('utils.platform')
 -- Base font size (used as-is on macOS). On Linux this is adjusted per-window at
 -- runtime for hi-DPI displays by events/font-resize.lua -- wezterm.gui.screens()
 -- is only callable on the gui thread, so it can't be done here at config-eval.
-local font_size = 16
+local font_size = 14
 
 -- Primary font. Keep macOS on the 'Mono' variant (unchanged); on Linux use the
 -- installed 'GeistMono Nerd Font' family (~/.local/share/fonts/GeistMonoNerdFont-Regular.otf).
@@ -21,7 +21,7 @@ return {
     -- "MesloLGM Nerd Font Mono",
     -- "UbuntuMono Nerd Font Mono",
     -- "JetBrains Mono",
-    { family = 'Liga SFMono Nerd Font', weight = 'Medium' },
+    "Liga SFMono Nerd Font",
     geist_font,
   },
   warn_about_missing_glyphs = false,
