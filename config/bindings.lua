@@ -218,6 +218,13 @@ local keys = {
          timemout_milliseconds = 1000,
       }),
    },
+   -- custom by Sahu S <mrsauravsahu@outlook.com>
+   {
+    key = 'v',
+    mods = 'CMD',
+    -- This sends the clipboard directly to the pane, working perfectly inside tmux
+    action = wezterm.action.PasteFrom 'Clipboard',
+   },
 }
 
 -- stylua: ignore
